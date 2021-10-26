@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Photo Collage Maker</string>
+
+    <!-- Nav drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Photo Collage Maker</string>
+    <string name="app_version_number">v1.0.0</string>
+    <string name="nav_header_desc">Navigation header app logo</string>
+    <string name="menu_editor">Photo Collage Maker</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="action_start_over">Start over</string>
+    <string name="action_share">Share</string>
+
+    <string name="content_description_layout">Layout option</string>
+    <string name="layout">Layout</string>
+    <string name="aspect">Aspect</string>
+    <string name="border">Border</string>
+    <string name="action_save_to_gallery">Save to gallery</string>
+</resources>

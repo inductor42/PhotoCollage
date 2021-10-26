@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.editor.EditorFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <FrameLayout
+            android:id="@+id/collage_container_parent"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/image_init_margin">
+
+                <FrameLayout
+                    android:id="@+id/collage_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tool_popup_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recycler_and_picker_height"
+        android:background="@android:color/white"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/color_picker_container"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.gerardbradshaw.colorpickerlibrary.views.CompactColorPickerView
+                android:id="@+id/color_picker_view"
+                android:layout_gravity="center"
+                app:menuType="image"
+                app:enablePreview="false"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/border_switch"
+                android:paddingEnd="8dp"
+                android:paddingStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tool_popup_recycler"
+            tools:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+
+    <!-- Tool buttons -->
+    <LinearLayout
+        android:id="@+id/tools_container"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_layout"
+            style="@style/ToolButtonCard" >
+            <TextView
+                android:text="@string/layout"
+                style="@style/ToolButtonCardChild"
+                app:drawableTopCompat="@drawable/ic_collage_layout" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_aspect_ratio"
+            style="@style/ToolButtonCard">
+            <TextView
+                android:text="@string/aspect"
+                style="@style/ToolButtonCardChild"
+                app:drawableTopCompat="@drawable/ic_aspect" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_border"
+            style="@style/ToolButtonCard">
+            <TextView
+                android:text="@string/border"
+                style="@style/ToolButtonCardChild"
+                app:drawableTopCompat="@drawable/ic_border" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3389769914405265/9879770230">
+    </com.google.android.gms.ads.AdView>
+</LinearLayout>
